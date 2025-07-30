@@ -1,4 +1,4 @@
-<h1>Este projeto é uma landing page moderna e altamente atrativa desenvolvida para apresentar os serviços de um personal trainer com consultoria online e presencial. A página foi pensada para gerar conversão, com destaque para os diferenciais, planos de atendimento, resultados reais de clientes e forte presença visual.</h1>
+<p>Este projeto é uma landing page moderna e altamente atrativa desenvolvida para apresentar os serviços de um personal trainer com consultoria online e presencial. A página foi pensada para gerar conversão, com destaque para os diferenciais, planos de atendimento, resultados reais de clientes e forte presença visual.</p>
 
 <br>
 
