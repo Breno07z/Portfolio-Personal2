@@ -1,6 +1,6 @@
 Este projeto é uma landing page moderna e altamente atrativa desenvolvida para apresentar os serviços de um personal trainer com consultoria online e presencial. A página foi pensada para gerar conversão, com destaque para os diferenciais, planos de atendimento, resultados reais de clientes e forte presença visual.
 
-🧠 Objetivo
+<h1> 🧠 Objetivo: </h1>
 Criar uma experiência envolvente para potenciais clientes, incentivando o agendamento de consultas com um educador físico dedicado. A landing page combina design impactante, conteúdo persuasivo e identidade visual personalizada.
 
 🚀 Funcionalidades
