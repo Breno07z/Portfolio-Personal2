@@ -1,0 +1,806 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transforme sua rotina com treinos personalizados | Personal Trainer</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+        body {
+            font-family: 'Poppins', sans-serif;
+            scroll-behavior: smooth;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%);
+        }
+        
+        .testimonial-slider {
+            scroll-snap-type: x mandatory;
+        }
+        
+        .testimonial-slide {
+            scroll-snap-align: start;
+        }
+        
+        .plan-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+        }
+        
+        .transform-card {
+            transition: all 0.3s ease;
+        }
+        
+        .transform-card:hover {
+            transform: scale(1.03);
+        }
+    </style>
+</head>
+
+<body class="bg-gray-50">
+    <!-- Header/Navigation -->
+    <header class="fixed w-full bg-white shadow-md z-50">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex items-center justify-between">
+                <div class="flex items-center">
+                    <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">PT</div>
+                    <span class="ml-3 text-xl font-bold text-gray-800">Personal Trainer</span>
+                </div>
+
+                <nav class="hidden md:flex space-x-8">
+                    <a href="#home" class="text-gray-800 hover:text-blue-600 font-medium">Início</a>
+                    <a href="#benefits" class="text-gray-800 hover:text-blue-600 font-medium">Benefícios</a>
+                    <a href="#plans" class="text-gray-800 hover:text-blue-600 font-medium">Planos</a>
+                    <a href="#testimonials" class="text-gray-800 hover:text-blue-600 font-medium">Depoimentos</a>
+                    <a href="#contact" class="text-gray-800 hover:text-blue-600 font-medium">Contato</a>
+                </nav>
+
+                <div class="hidden md:block">
+                    <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition duration-300">Agende agora</a>
+                </div>
+
+                <button class="md:hidden text-gray-800 focus:outline-none" id="menu-toggle">
+                    <i class="fas fa-bars text-2xl"></i>
+                </button>
+            </div>
+
+            <!-- Mobile menu -->
+            <div class="md:hidden hidden mt-4 pb-4" id="mobile-menu">
+                <a href="#home" class="block py-2 text-gray-800 hover:text-blue-600">Início</a>
+                <a href="#benefits" class="block py-2 text-gray-800 hover:text-blue-600">Benefícios</a>
+                <a href="#plans" class="block py-2 text-gray-800 hover:text-blue-600">Planos</a>
+                <a href="#testimonials" class="block py-2 text-gray-800 hover:text-blue-600">Depoimentos</a>
+                <a href="#contact" class="block py-2 text-gray-800 hover:text-blue-600">Contato</a>
+                <a href="#contact" class="mt-2 inline-block bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-full font-medium transition duration-300">Agende agora</a>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section id="home" class="hero-gradient pt-32 pb-20 text-white">
+        <div class="container mx-auto px-6 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-12 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold leading-tight mb-6">Transforme sua rotina com treinos personalizados</h1>
+                <p class="text-xl mb-8">Alcance seus objetivos mais rápido com um personal trainer dedicado exclusivamente ao seu desenvolvimento.</p>
+                <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="#contact" class="bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold text-center transition duration-300">Agende sua consulta gratuita</a>
+                    <a href="#plans" class="border-2 border-white hover:bg-white hover:text-blue-600 px-8 py-3 rounded-full font-bold text-center transition duration-300">Conheça nossos planos</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <div class="relative">
+                    <img src="https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Personal Trainer" class="rounded-lg shadow-2xl w-full max-w-lg transform -rotate-2">
+                    <div class="absolute -bottom-6 -right-6 bg-white p-4 rounded-lg shadow-lg transform rotate-3">
+                        <div class="flex items-center">
+                            <div class="bg-blue-100 p-3 rounded-full mr-3">
+                                <i class="fas fa-video text-blue-600 text-xl"></i>
+                            </div>
+                            <div>
+                                <p class="text-gray-800 font-bold">Consultoria Online</p>
+                                <p class="text-gray-600 text-sm">Flexibilidade e comodidade</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits Section -->
+    <section id="benefits" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Benefícios de um Personal Trainer Exclusivo</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Treinos adaptados especificamente para você, seus objetivos e seu estilo de vida.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="bg-gray-50 p-8 rounded-xl transform-card">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-calendar-check text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Flexibilidade total</h3>
+                    <p class="text-gray-600">Treine quando e onde quiser com nossas consultas online ou presenciais, adaptando-se à sua rotina.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl transform-card">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-bullseye text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Resultados mais rápidos</h3>
+                    <p class="text-gray-600">Planejamento personalizado e acompanhamento constante para alcançar seus objetivos em menos tempo.</p>
+                </div>
+
+                <div class="bg-gray-50 p-8 rounded-xl transform-card">
+                    <div class="bg-blue-100 w-16 h-16 rounded-full flex items-center justify-center mb-6">
+                        <i class="fas fa-heartbeat text-blue-600 text-2xl"></i>
+                    </div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Saúde em primeiro lugar</h3>
+                    <p class="text-gray-600">Exercícios adaptados ao seu condicionamento físico, evitando lesões e maximizando resultados.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Como Funciona</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Um processo simples para transformar seu corpo e sua saúde.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div class="text-center">
+                    <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">1</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Análise Inicial</h3>
+                    <p class="text-gray-600">Avaliação completa do seu condicionamento físico e objetivos.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">2</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Plano Personalizado</h3>
+                    <p class="text-gray-600">Criação de um programa exclusivo para suas necessidades.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">3</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Acompanhamento</h3>
+                    <p class="text-gray-600">Sessões regulares com ajustes contínuos para otimizar resultados.</p>
+                </div>
+
+                <div class="text-center">
+                    <div class="bg-blue-600 w-20 h-20 rounded-full flex items-center justify-center mx-auto mb-6 text-white text-2xl font-bold">4</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-3">Resultados</h3>
+                    <p class="text-gray-600">Alcance seus objetivos e mantenha-se motivado com suporte constante.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Plans Section -->
+    <section id="plans" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Nossos Planos</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Escolha o plano que melhor se adapta às suas necessidades.</p>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto">
+                <!-- Basic Plan -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg plan-card transition duration-300">
+                    <div class="bg-gray-200 py-6 px-8">
+                        <h3 class="text-2xl font-bold text-gray-800">Básico</h3>
+                        <p class="text-gray-600">Ideal para quem está começando</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-blue-600">R$199</span>
+                            <span class="text-gray-600">/mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>4 sessões mensais</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Plano de treino básico</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Acompanhamento por WhatsApp</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i class="fas fa-times text-red-400 mr-2"></i>
+                                <span>Videochamadas semanais</span>
+                            </li>
+                            <li class="flex items-center text-gray-400">
+                                <i class="fas fa-times text-red-400 mr-2"></i>
+                                <span>Ajustes de dieta</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-medium transition duration-300">Começar agora</a>
+                    </div>
+                </div>
+
+                <!-- Premium Plan (Featured) -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-2xl plan-card border-2 border-blue-600 transition duration-300 transform scale-105">
+                    <div class="bg-blue-600 py-6 px-8 text-white">
+                        <div class="flex justify-between items-start">
+                            <div>
+                                <h3 class="text-2xl font-bold">Premium</h3>
+                                <p>O mais escolhido</p>
+                            </div>
+                            <span class="bg-white text-blue-600 text-xs font-bold px-3 py-1 rounded-full">RECOMENDADO</span>
+                        </div>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-blue-600">R$349</span>
+                            <span class="text-gray-600">/mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>8 sessões mensais</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Plano de treino personalizado</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Acompanhamento diário</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>2 videochamadas semanais</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Orientações nutricionais básicas</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-medium transition duration-300">Começar agora</a>
+                    </div>
+                </div>
+
+                <!-- Advanced Plan -->
+                <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg plan-card transition duration-300">
+                    <div class="bg-gray-200 py-6 px-8">
+                        <h3 class="text-2xl font-bold text-gray-800">Avançado</h3>
+                        <p class="text-gray-600">Para quem busca resultados extraordinários</p>
+                    </div>
+                    <div class="p-8">
+                        <div class="mb-6">
+                            <span class="text-4xl font-bold text-blue-600">R$599</span>
+                            <span class="text-gray-600">/mês</span>
+                        </div>
+                        <ul class="space-y-3 mb-8">
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>12 sessões mensais</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Plano de treino ultra-personalizado</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Acompanhamento 24/7</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Videochamadas ilimitadas</span>
+                            </li>
+                            <li class="flex items-center">
+                                <i class="fas fa-check text-green-500 mr-2"></i>
+                                <span>Plano alimentar completo</span>
+                            </li>
+                        </ul>
+                        <a href="#contact" class="block w-full bg-blue-600 hover:bg-blue-700 text-white text-center py-3 rounded-lg font-medium transition duration-300">Começar agora</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="mt-12 text-center">
+                <p class="text-gray-600 mb-4">Não encontrou o que procura?</p>
+                <a href="#contact" class="text-blue-600 hover:text-blue-800 font-medium">Fale conosco para um plano totalmente personalizado <i class="fas fa-arrow-right ml-1"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section id="testimonials" class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Resultados Reais</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Veja o que nossos alunos estão dizendo sobre sua transformação.</p>
+            </div>
+
+            <div class="relative">
+                <div class="flex overflow-x-auto pb-8 testimonial-slider scrollbar-hide" id="testimonial-slider">
+                    <!-- Testimonial 1 -->
+                    <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 testimonial-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                            <div class="flex items-center mb-6">
+                                <img src="https://randomuser.me/api/portraits/women/32.jpg" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Ana Carolina</h4>
+                                    <p class="text-gray-600 text-sm">Perdeu 12kg em 3 meses</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">"Com o acompanhamento personalizado, consegui resultados que nunca imaginei possível. O treino adaptado à minha rotina foi essencial para minha transformação."</p>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">Há 2 semanas</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 2 -->
+                    <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 testimonial-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                            <div class="flex items-center mb-6">
+                                <img src="https://randomuser.me/api/portraits/men/45.jpg" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Ricardo Almeida</h4>
+                                    <p class="text-gray-600 text-sm">Ganhou 8kg de massa muscular</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">"As consultas online foram perfeitas para minha rotina corrida. O plano alimentar e os treinos específicos me ajudaram a alcançar meu objetivo de hipertrofia mais rápido do que esperava."</p>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">Há 1 mês</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 3 -->
+                    <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 testimonial-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                            <div class="flex items-center mb-6">
+                                <img src="https://randomuser.me/api/portraits/women/68.jpg" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Juliana Santos</h4>
+                                    <p class="text-gray-600 text-sm">Melhorou performance na corrida</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">"Depois de anos tentando melhorar meu tempo na maratona, em apenas 4 meses com o treino personalizado consegui reduzir meu tempo em 18 minutos! O acompanhamento constante fez toda a diferença."</p>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star-half-alt text-yellow-400"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">Há 2 meses</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Testimonial 4 -->
+                    <div class="flex-shrink-0 w-full md:w-1/2 lg:w-1/3 px-4 testimonial-slide">
+                        <div class="bg-white p-8 rounded-xl shadow-md h-full">
+                            <div class="flex items-center mb-6">
+                                <img src="https://randomuser.me/api/portraits/men/22.jpg" alt="Cliente" class="w-16 h-16 rounded-full object-cover mr-4">
+                                <div>
+                                    <h4 class="font-bold text-gray-800">Carlos Eduardo</h4>
+                                    <p class="text-gray-600 text-sm">Recuperação pós-lesão</p>
+                                </div>
+                            </div>
+                            <p class="text-gray-700 mb-6">"Depois de uma lesão no joelho, pensei que nunca mais voltaria a treinar normalmente. Com o programa de reabilitação personalizado, em 6 meses já estava melhor do que antes da lesão!"</p>
+                            <div class="flex justify-between">
+                                <div class="flex items-center">
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400 mr-1"></i>
+                                    <i class="fas fa-star text-yellow-400"></i>
+                                </div>
+                                <span class="text-sm text-gray-500">Há 3 meses</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <button class="hidden md:block absolute left-0 top-1/2 transform -translate-y-1/2 -translate-x-4 bg-white p-3 rounded-full shadow-md text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300" id="prev-testimonial">
+                    <i class="fas fa-chevron-left"></i>
+                </button>
+                <button class="hidden md:block absolute right-0 top-1/2 transform -translate-y-1/2 translate-x-4 bg-white p-3 rounded-full shadow-md text-blue-600 hover:bg-blue-600 hover:text-white transition duration-300" id="next-testimonial">
+                    <i class="fas fa-chevron-right"></i>
+                </button>
+            </div>
+
+            <!-- Before/After Gallery -->
+            <div class="mt-16">
+                <h3 class="text-2xl font-bold text-center text-gray-800 mb-8">Transformações Reais</h3>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                    <div class="relative group overflow-hidden rounded-xl transform-card">
+                        <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80" alt="Transformação 1" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <p class="text-white font-bold">Marcos - 6 meses</p>
+                                <p class="text-white text-sm">Perdeu 15kg e ganhou definição muscular</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group overflow-hidden rounded-xl transform-card">
+                        <img src="https://images.unsplash.com/photo-1538805060514-97d9cc17730c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1374&q=80" alt="Transformação 2" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <p class="text-white font-bold">Fernanda - 4 meses</p>
+                                <p class="text-white text-sm">Redução de medidas e aumento de resistência</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="relative group overflow-hidden rounded-xl transform-card">
+                        <img src="https://images.unsplash.com/photo-1551632436-cbf8dd35adfa?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1471&q=80" alt="Transformação 3" class="w-full h-64 object-cover transition duration-500 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent flex items-end p-6">
+                            <div>
+                                <p class="text-white font-bold">Roberto - 8 meses</p>
+                                <p class="text-white text-sm">Ganhou 10kg de massa muscular magra</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="py-20 bg-blue-600 text-white">
+        <div class="container mx-auto px-6 text-center">
+            <h2 class="text-3xl md:text-4xl font-bold mb-6">Pronto para transformar seu corpo e sua saúde?</h2>
+            <p class="text-xl mb-8 max-w-3xl mx-auto">Agende sua consulta gratuita e dê o primeiro passo em direção aos seus objetivos.</p>
+            <a href="#contact" class="inline-block bg-white text-blue-600 hover:bg-gray-100 px-8 py-3 rounded-full font-bold transition duration-300">Comece agora - é grátis!</a>
+        </div>
+    </section>
+
+    <!-- Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="flex flex-col md:flex-row">
+                <div class="md:w-1/2 mb-12 md:mb-0 md:pr-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-6">Entre em Contato</h2>
+                    <p class="text-gray-600 mb-8">Preencha o formulário ao lado ou entre em contato diretamente por um de nossos canais:</p>
+
+                    <div class="space-y-6">
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-phone-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Telefone</h4>
+                                <p class="text-gray-600">(11) 98765-4321</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-envelope text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Email</h4>
+                                <p class="text-gray-600">contato@personaltrainer.com</p>
+                            </div>
+                        </div>
+
+                        <div class="flex items-start">
+                            <div class="bg-blue-100 p-3 rounded-full mr-4">
+                                <i class="fas fa-map-marker-alt text-blue-600"></i>
+                            </div>
+                            <div>
+                                <h4 class="font-bold text-gray-800">Endereço</h4>
+                                <p class="text-gray-600">Av. Paulista, 1000 - São Paulo/SP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="mt-8">
+                        <h4 class="font-bold text-gray-800 mb-4">Redes Sociais</h4>
+                        <div class="flex space-x-4">
+                            <a href="#" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-instagram text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-facebook-f text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-tiktok text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-youtube text-xl"></i>
+                            </a>
+                            <a href="#" class="bg-gray-100 hover:bg-blue-600 hover:text-white w-10 h-10 rounded-full flex items-center justify-center transition duration-300">
+                                <i class="fab fa-whatsapp text-xl"></i>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="md:w-1/2">
+                    <form class="bg-gray-50 p-8 rounded-xl shadow-md">
+                        <div class="mb-6">
+                            <label for="name" class="block text-gray-700 font-medium mb-2">Nome Completo</label>
+                            <input type="text" id="name" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Seu nome">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="email" class="block text-gray-700 font-medium mb-2">Email</label>
+                            <input type="email" id="email" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="seu@email.com">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="phone" class="block text-gray-700 font-medium mb-2">Telefone</label>
+                            <input type="tel" id="phone" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="(11) 99999-9999">
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="plan" class="block text-gray-700 font-medium mb-2">Plano de interesse</label>
+                            <select id="plan" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent">
+                                <option value="">Selecione um plano</option>
+                                <option value="basic">Básico (R$199/mês)</option>
+                                <option value="premium">Premium (R$349/mês)</option>
+                                <option value="advanced">Avançado (R$599/mês)</option>
+                                <option value="custom">Personalizado</option>
+                            </select>
+                        </div>
+
+                        <div class="mb-6">
+                            <label for="message" class="block text-gray-700 font-medium mb-2">Mensagem</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-transparent" placeholder="Conte-nos sobre seus objetivos..."></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-lg font-bold transition duration-300">Enviar mensagem</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 bg-gray-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Perguntas Frequentes</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">Tire suas dúvidas sobre nossos serviços.</p>
+            </div>
+
+            <div class="max-w-3xl mx-auto">
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 text-lg focus:outline-none faq-toggle">
+                        <span>Como funcionam as consultas online?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-content">
+                        <p>Nossas consultas online são realizadas por videochamada em plataformas como Zoom ou Google Meet. Você receberá um link de acesso após o agendamento. Durante a sessão, faremos a avaliação, demonstração dos exercícios e ajustes em
+                            tempo real, exatamente como em uma consulta presencial.</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 text-lg focus:outline-none faq-toggle">
+                        <span>Preciso ter equipamentos em casa?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-content">
+                        <p>Não é obrigatório. Criamos treinos adaptados ao que você tem disponível em casa. Se não tiver nenhum equipamento, focamos em exercícios com o peso do corpo. Caso tenha alguns acessórios como halteres, elásticos ou cadeira, podemos
+                            incorporá-los para variar os estímulos.</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 text-lg focus:outline-none faq-toggle">
+                        <span>Quanto tempo até eu ver resultados?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-content">
+                        <p>Os resultados variam conforme seu objetivo, comprometimento e histórico de atividades. Em média, alunos que seguem o programa corretamente começam a notar melhoras na disposição e pequenas mudanças físicas em 3-4 semanas. Resultados
+                            mais significativos geralmente aparecem a partir do 2º mês.</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 border-b border-gray-200 pb-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 text-lg focus:outline-none faq-toggle">
+                        <span>Posso cancelar quando quiser?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-content">
+                        <p>Sim, todos nossos planos têm cancelamento sem multa. Basta avisar com 7 dias de antecedência do próximo vencimento. Para quem assinou pacotes promocionais com desconto, o cancelamento antecipado pode estar sujeito a ajuste de valores
+                            conforme termos contratuais.</p>
+                    </div>
+                </div>
+
+                <div class="mb-6 pb-6">
+                    <button class="flex justify-between items-center w-full text-left font-bold text-gray-800 text-lg focus:outline-none faq-toggle">
+                        <span>Como é feita a avaliação física inicial?</span>
+                        <i class="fas fa-plus text-blue-600"></i>
+                    </button>
+                    <div class="mt-4 text-gray-600 hidden faq-content">
+                        <p>A avaliação inicial pode ser presencial ou online. Coletamos medidas corporais (se possível), analisamos histórico de saúde, testamos capacidades físicas básicas (força, flexibilidade, resistência) e discutimos seus objetivos em
+                            detalhes. Com essas informações, criamos um plano totalmente personalizado.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-800 text-white py-12">
+        <div class="container mx-auto px-6">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <div class="flex items-center mb-4">
+                        <div class="w-12 h-12 rounded-full bg-blue-600 flex items-center justify-center text-white font-bold text-xl">PT</div>
+                        <span class="ml-3 text-xl font-bold">Personal Trainer</span>
+                    </div>
+                    <p class="text-gray-400">Transformando vidas através do exercício físico personalizado desde 2015.</p>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Links Rápidos</h4>
+                    <ul class="space-y-2">
+                        <li><a href="#home" class="text-gray-400 hover:text-white transition duration-300">Início</a></li>
+                        <li><a href="#benefits" class="text-gray-400 hover:text-white transition duration-300">Benefícios</a></li>
+                        <li><a href="#plans" class="text-gray-400 hover:text-white transition duration-300">Planos</a></li>
+                        <li><a href="#testimonials" class="text-gray-400 hover:text-white transition duration-300">Depoimentos</a></li>
+                        <li><a href="#contact" class="text-gray-400 hover:text-white transition duration-300">Contato</a></li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Horário de Atendimento</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <i class="far fa-clock mr-2 mt-1"></i>
+                            <span>Segunda a Sexta: 6h às 22h</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-clock mr-2 mt-1"></i>
+                            <span>Sábado: 8h às 14h</span>
+                        </li>
+                        <li class="flex items-start">
+                            <i class="far fa-clock mr-2 mt-1"></i>
+                            <span>Domingo: Fechado</span>
+                        </li>
+                    </ul>
+                </div>
+
+                <div>
+                    <h4 class="text-lg font-bold mb-4">Newsletter</h4>
+                    <p class="text-gray-400 mb-4">Receba dicas exclusivas de treino e nutrição no seu email.</p>
+                    <form class="flex">
+                        <input type="email" placeholder="Seu email" class="px-4 py-2 rounded-l-lg focus:outline-none text-gray-800 w-full">
+                        <button type="submit" class="bg-blue-600 hover:bg-blue-700 px-4 py-2 rounded-r-lg transition duration-300">
+                            <i class="fas fa-paper-plane"></i>
+                        </button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="border-t border-gray-700 mt-12 pt-8 flex flex-col md:flex-row justify-between items-center">
+                <p class="text-gray-400 mb-4 md:mb-0">© 2023 Personal Trainer. Todos os direitos reservados.</p>
+                <div class="flex space-x-6">
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-instagram text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-facebook-f text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-tiktok text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-youtube text-xl"></i></a>
+                    <a href="#" class="text-gray-400 hover:text-white transition duration-300"><i class="fab fa-whatsapp text-xl"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Float Button -->
+    <a href="#" class="fixed bottom-6 right-6 bg-green-500 hover:bg-green-600 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-lg transition duration-300 z-50">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // FAQ accordion
+        const faqToggles = document.querySelectorAll('.faq-toggle');
+        faqToggles.forEach(toggle => {
+            toggle.addEventListener('click', function() {
+                const content = this.nextElementSibling;
+                const icon = this.querySelector('i');
+
+                // Toggle content
+                content.classList.toggle('hidden');
+
+                // Toggle icon
+                if (content.classList.contains('hidden')) {
+                    icon.classList.remove('fa-minus');
+                    icon.classList.add('fa-plus');
+                } else {
+                    icon.classList.remove('fa-plus');
+                    icon.classList.add('fa-minus');
+                }
+            });
+        });
+
+        // Testimonial slider
+        const slider = document.getElementById('testimonial-slider');
+        const prevBtn = document.getElementById('prev-testimonial');
+        const nextBtn = document.getElementById('next-testimonial');
+
+        if (slider && prevBtn && nextBtn) {
+            let currentSlide = 0;
+            const slides = document.querySelectorAll('.testimonial-slide');
+            const slideWidth = slides[0].offsetWidth;
+            const totalSlides = slides.length;
+
+            function goToSlide(index) {
+                if (index < 0) index = totalSlides - 1;
+                if (index >= totalSlides) index = 0;
+
+                currentSlide = index;
+                slider.scrollTo({
+                    left: slideWidth * currentSlide,
+                    behavior: 'smooth'
+                });
+            }
+
+            prevBtn.addEventListener('click', () => goToSlide(currentSlide - 1));
+            nextBtn.addEventListener('click', () => goToSlide(currentSlide + 1));
+
+            // Auto-scroll (optional)
+            // setInterval(() => goToSlide(currentSlide + 1), 5000);
+        }
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+
+                const targetId = this.getAttribute('href');
+                if (targetId === '#') return;
+
+                const targetElement = document.querySelector(targetId);
+                if (targetElement) {
+                    const headerHeight = document.querySelector('header').offsetHeight;
+                    const targetPosition = targetElement.offsetTop - headerHeight;
+
+                    window.scrollTo({
+                        top: targetPosition,
+                        behavior: 'smooth'
+                    });
+
+                    // Close mobile menu if open
+                    const mobileMenu = document.getElementById('mobile-menu');
+                    if (!mobileMenu.classList.contains('hidden')) {
+                        mobileMenu.classList.add('hidden');
+                    }
+                }
+            });
+        });
+    </script>
+</body>
+
+</html>
